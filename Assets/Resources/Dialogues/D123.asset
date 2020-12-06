@@ -1,0 +1,32 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2c3f478ef69fbe04fa9ed3664a8a443e, type: 3}
+  m_Name: D123
+  m_EditorClassIdentifier: 
+  _serializedGraph: '{"type":"NodeCanvas.DialogueTrees.DialogueTree","nodes":[{"statement":{"_text":"1This
+    is a dialogue text"},"_actorName":"mark","_actorParameterID":"24db0445-25dd-4c96-a02f-65284a83e938","_position":{"x":490.0,"y":63.0},"$type":"NodeCanvas.DialogueTrees.StatementNode","$id":"0"},{"statement":{"_text":"This
+    is a dialogue text111"},"_actorName":"bob","_actorParameterID":"2fa486f7-0439-471b-8094-588e8b9cb5d3","_position":{"x":404.0,"y":166.0},"$type":"NodeCanvas.DialogueTrees.StatementNode","$id":"1"}],"connections":[{"_sourceNode":{"$ref":"0"},"_targetNode":{"$ref":"1"},"$type":"NodeCanvas.DialogueTrees.DTConnection"}],"canvasGroups":[],"localBlackboard":{"_variables":{}},"derivedData":{"actorParameters":[{"_keyName":"mark","_id":"24db0445-25dd-4c96-a02f-65284a83e938"},{"_keyName":"bob","_id":"2fa486f7-0439-471b-8094-588e8b9cb5d3"}],"$type":"NodeCanvas.DialogueTrees.DialogueTree+DerivedSerializationData"}}'
+  _objectReferences: []
+  _graphSource:
+    _version: 3.1
+    _category: 
+    _comments: 
+    _translation: {x: 0, y: 0}
+    _zoomFactor: 1
+  _haltSerialization: 0
+  actorParameters:
+  - _keyName: mark
+    _id: 24db0445-25dd-4c96-a02f-65284a83e938
+    _actorObject: {fileID: 0}
+  - _keyName: bob
+    _id: 2fa486f7-0439-471b-8094-588e8b9cb5d3
+    _actorObject: {fileID: 0}
