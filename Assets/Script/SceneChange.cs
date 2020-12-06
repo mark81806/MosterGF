@@ -17,5 +17,4 @@ public class SceneChange : MonoBehaviour
     {
         SceneManager.LoadScene(2);
     }
-
 }

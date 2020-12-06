@@ -4,13 +4,14 @@ using UnityEngine;
 
 public class PlayerData : MonoBehaviour
 {
-
+    public static PlayerData self;
     bool HaveSaveFile = false;
-    int GameProgress;
-    int FoodAmount;
-    int PowerData;
+    public int GameProgress;
+    public int SoulAmount;
+    public int PowerData;
     public void Awake()
     {
+        self = this;
         if (!HaveSaveFile)
         {
             Init();
@@ -24,7 +25,7 @@ public class PlayerData : MonoBehaviour
     private void ReadData()
     {
         GameProgress = PlayerPrefs.GetInt("GameProgress");
-        FoodAmount = PlayerPrefs.GetInt("FoodAmount");
+        SoulAmount = PlayerPrefs.GetInt("SoulAmount");
         PowerData = PlayerPrefs.GetInt("PowerData");
     }
 
@@ -33,7 +34,7 @@ public class PlayerData : MonoBehaviour
         //game progess
         PlayerPrefs.SetInt("GameProgress", GameProgress);
         //food amount
-        PlayerPrefs.SetInt("FoodAmount", FoodAmount);
+        PlayerPrefs.SetInt("SoulAmount", SoulAmount);
         //power data
         PlayerPrefs.SetInt("PowerData", PowerData);
     }
@@ -43,7 +44,7 @@ public class PlayerData : MonoBehaviour
         //game progess
         PlayerPrefs.SetInt("GameProgress", 0);
         //food amount
-        PlayerPrefs.SetInt("FoodAmount", 0);
+        PlayerPrefs.SetInt("SoulAmount", 0);
         //power data
         PlayerPrefs.SetInt("PowerData", 0);
     }
