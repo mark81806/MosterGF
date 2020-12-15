@@ -5,15 +5,18 @@ using UnityEngine;
 public class MonsterControl : MonoBehaviour
 {
     public static MonsterControl self;
-    public void awake() 
+    public void Awake() 
     {
         self = this;
     }
-    public bool AutoCatch = false;
+    public bool autocatch = false;
     private void Update() 
     {
-        if (AutoCatch) 
-        { killmonster(); }
+        autocatch = AutoCatch.self.autocatch;
+        if (autocatch) 
+        {
+            killmonster();
+        }
     }
     public void onclick()
     {
@@ -24,18 +27,5 @@ public class MonsterControl : MonoBehaviour
             PlayerData.self.SoulAmount += 100;
             Destroy(gameObject);
     }
-    public void autocatchon()
-    {
-        if (!AutoCatch)
-        {
-            AutoCatch = true;
-            Invoke("autocatchoff", 5f);
-            Debug.Log("aaaa");
-        }
-    }
-    public void autocatchoff()
-    {
-        AutoCatch = false;
-        Debug.Log("bbbb");
-    }
+    
 }
