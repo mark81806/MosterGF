@@ -21,6 +21,7 @@ public class PlayerData : MonoBehaviour
     public void OnApplicationQuit()
     {
         SaveData();
+        HaveSaveFile = true;
     }
     private void ReadData()
     {
@@ -43,8 +44,9 @@ public class PlayerData : MonoBehaviour
     {
         //game progess
         PlayerPrefs.SetInt("GameProgress", 0);
-        //food amount
+        //soul amount
         PlayerPrefs.SetInt("SoulAmount", 0);
+        PlayerPrefs.SetInt("SoulLimit",1000);
         //power data
         PlayerPrefs.SetInt("PowerData", 0);
     }
