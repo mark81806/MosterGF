@@ -22,8 +22,4 @@ public class AutoCatch : MonoBehaviour
     {
         autocatch = false;
     }
-    public void now() {
-        System.DateTime date;
-        date = System.DateTime.Now; //now time 
-    }
 }

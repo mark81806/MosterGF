@@ -9,6 +9,7 @@ public class PlayerData : MonoBehaviour
     public int GameProgress;
     public int SoulAmount;
     public int PowerData;
+    public string PlayerLogOutTimeString;
     public void Awake()
     {
         self = this;
@@ -28,6 +29,8 @@ public class PlayerData : MonoBehaviour
         GameProgress = PlayerPrefs.GetInt("GameProgress");
         SoulAmount = PlayerPrefs.GetInt("SoulAmount");
         PowerData = PlayerPrefs.GetInt("PowerData");
+        PlayerLogOutTimeString = PlayerPrefs.GetString("TimeData");
+
     }
 
     public void SaveData()
@@ -38,6 +41,8 @@ public class PlayerData : MonoBehaviour
         PlayerPrefs.SetInt("SoulAmount", SoulAmount);
         //power data
         PlayerPrefs.SetInt("PowerData", PowerData);
+        //time data
+        GetTime();
     }
 
     public void Init()
@@ -49,5 +54,13 @@ public class PlayerData : MonoBehaviour
         PlayerPrefs.SetInt("SoulLimit",1000);
         //power data
         PlayerPrefs.SetInt("PowerData", 0);
+        //playertimedata
+        PlayerPrefs.SetString("TimeData","");
+    }
+    public void GetTime()
+    {
+        System.DateTime playertimelogout = System.DateTime.Now;
+        string LogOutTimeString = playertimelogout.ToString("yyyy-MM-dd HH:mm:ss");
+        PlayerPrefs.SetString("TimeData",LogOutTimeString);
     }
 }
