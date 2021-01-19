@@ -8,11 +8,11 @@ public class ClickToStart : MonoBehaviour
 {
 
     public DialogueTreeController dialogueController;
-    private const string DialoguePath = "Dialogues/D123";
+    private const string DialoguePath = "Dialogues/";
 
     public void Start() 
     {
-        dialogueController.graph = (NodeCanvas.Framework.Graph)Resources.Load(DialoguePath);
+        dialogueController.graph = (NodeCanvas.Framework.Graph)Resources.Load(DialoguePath+"D123");
     }
     public void Click()
     {
