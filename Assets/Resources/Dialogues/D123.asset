@@ -14,21 +14,23 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _serializedGraph: '{"type":"NodeCanvas.DialogueTrees.DialogueTree","nodes":[{"statement":{"_text":"1This
     is a dialogue text"},"_actorName":"mark","_actorParameterID":"24db0445-25dd-4c96-a02f-65284a83e938","_UID":"53cd25ed-aad6-4a7a-8ed1-d55cebe0ea03","_position":{"x":490.0,"y":63.0},"$type":"NodeCanvas.DialogueTrees.StatementNode","$id":"0"},{"statement":{"_text":"This
-    is a dialogue text111"},"_actorName":"bob","_actorParameterID":"2fa486f7-0439-471b-8094-588e8b9cb5d3","_UID":"ff65f18e-6ca0-4e17-b6e8-ea30a9965505","_position":{"x":404.0,"y":166.0},"$type":"NodeCanvas.DialogueTrees.StatementNode","$id":"1"}],"connections":[{"_sourceNode":{"$ref":"0"},"_targetNode":{"$ref":"1"},"$type":"NodeCanvas.DialogueTrees.DTConnection"}],"canvasGroups":[],"localBlackboard":{"_variables":{}},"derivedData":{"actorParameters":[{"_keyName":"mark","_id":"24db0445-25dd-4c96-a02f-65284a83e938","_actorObject":1},{"_keyName":"bob","_id":"2fa486f7-0439-471b-8094-588e8b9cb5d3"}],"$type":"NodeCanvas.DialogueTrees.DialogueTree+DerivedSerializationData"}}'
+    is a dialogue text111"},"_actorName":"bob","_actorParameterID":"2fa486f7-0439-471b-8094-588e8b9cb5d3","_UID":"ff65f18e-6ca0-4e17-b6e8-ea30a9965505","_position":{"x":404.0,"y":166.0},"$type":"NodeCanvas.DialogueTrees.StatementNode","$id":"1"},{"_action":{"overrideAgent":{"_type":"UnityEngine.Transform"},"$type":"NodeCanvas.Tasks.Actions.SetObjectActive"},"_position":{"x":223.3563,"y":169.0264},"$type":"NodeCanvas.DialogueTrees.ActionNode"}],"connections":[{"_sourceNode":{"$ref":"0"},"_targetNode":{"$ref":"1"},"$type":"NodeCanvas.DialogueTrees.DTConnection"}],"canvasGroups":[],"localBlackboard":{"_variables":{"myString":{"_value":"cv","_name":"myString","_id":"046443f8-f2ee-4404-a841-2c482fd7e404","$type":"NodeCanvas.Framework.Variable`1[[System.String,
+    mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089]]"}}},"derivedData":{"actorParameters":[{"_keyName":"mark","_id":"24db0445-25dd-4c96-a02f-65284a83e938","_actorObject":1},{"_keyName":"bob","_id":"2fa486f7-0439-471b-8094-588e8b9cb5d3"}],"$type":"NodeCanvas.DialogueTrees.DialogueTree+DerivedSerializationData"}}'
   _objectReferences:
   - {fileID: 0}
-  - {fileID: 0}
+  - {fileID: 82955290465918511, guid: 6445c48d067695d469a2b5352df81205, type: 3}
   _graphSource:
     _version: 3.1
     _category: 
     _comments: 
-    _translation: {x: 122, y: -13}
-    _zoomFactor: 0.67246896
+    _translation: {x: 140.99997, y: 21.000004}
+    _zoomFactor: 0.82827324
   _haltSerialization: 0
   actorParameters:
   - _keyName: mark
     _id: 24db0445-25dd-4c96-a02f-65284a83e938
-    _actorObject: {fileID: 0}
+    _actorObject: {fileID: 82955290465918511, guid: 6445c48d067695d469a2b5352df81205,
+      type: 3}
   - _keyName: bob
     _id: 2fa486f7-0439-471b-8094-588e8b9cb5d3
     _actorObject: {fileID: 0}

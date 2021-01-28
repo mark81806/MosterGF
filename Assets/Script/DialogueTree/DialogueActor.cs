@@ -8,7 +8,7 @@ namespace NodeCanvas.DialogueTrees
     [AddComponentMenu("NodeCanvas/Dialogue Actor")]
     public class DialogueActor : MonoBehaviour, IDialogueActor
     {
-
+        private bool portraitChange = true;
         [SerializeField]
         protected string _name;
         [SerializeField]
@@ -17,7 +17,7 @@ namespace NodeCanvas.DialogueTrees
         protected Color _dialogueColor = Color.white;
         [SerializeField]
         protected Vector3 _dialogueOffset;
-
+       
         private Sprite _portraitSprite;
 
         new public string name
@@ -28,16 +28,21 @@ namespace NodeCanvas.DialogueTrees
         public Texture2D portrait
         {
             get { return _portrait; }
+            set { _portrait = value;
+                portraitChange = true;
+            }
         }
 
         public Sprite portraitSprite
         {
             get
             {
+                if (portraitChange && portrait != null) { _portraitSprite = Sprite.Create(portrait, new Rect(0, 0, portrait.width, portrait.height), new Vector2(0.5f, 0.5f)); }
                 if (_portraitSprite == null && portrait != null)
                     _portraitSprite = Sprite.Create(portrait, new Rect(0, 0, portrait.width, portrait.height), new Vector2(0.5f, 0.5f));
                 return _portraitSprite;
             }
+            
         }
 
         public Color dialogueColor

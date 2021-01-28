@@ -5,7 +5,7 @@ using UnityEngine;
 public class PlayerData : MonoBehaviour
 {
     public static PlayerData self;
-    bool HaveSaveFile = false;
+    public bool HaveSaveFile = false;
     public int GameProgress;
     public int SoulAmount;
     public int PowerData;
@@ -17,6 +17,7 @@ public class PlayerData : MonoBehaviour
         {
             Init();
         }
+        Debug.Log("ReadData");
         ReadData();
     }
     public void OnApplicationQuit()

@@ -12,7 +12,7 @@ public class ClickToStart : MonoBehaviour
 
     public void Start() 
     {
-        dialogueController.graph = (NodeCanvas.Framework.Graph)Resources.Load(DialoguePath+"D123");
+        dialogueController.graph = (NodeCanvas.Framework.Graph)Resources.Load(DialoguePath+"0");
     }
     public void Click()
     {
