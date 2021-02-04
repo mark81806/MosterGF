@@ -5,7 +5,6 @@ using UnityEngine;
 public class PlayerData : MonoBehaviour
 {
     public static PlayerData self;
-    public bool HaveSaveFile = false;
     public int GameProgress;
     public int SoulAmount;
     public int PowerData;
@@ -13,17 +12,15 @@ public class PlayerData : MonoBehaviour
     public void Awake()
     {
         self = this;
-        if (!HaveSaveFile)
+        if (PlayerPrefs.GetInt("GameProgress") ==0)
         {
             Init();
         }
-        Debug.Log("ReadData");
-        ReadData();
+        ReadData();        
     }
     public void OnApplicationQuit()
     {
         SaveData();
-        HaveSaveFile = true;
     }
     private void ReadData()
     {
@@ -31,7 +28,6 @@ public class PlayerData : MonoBehaviour
         SoulAmount = PlayerPrefs.GetInt("SoulAmount");
         PowerData = PlayerPrefs.GetInt("PowerData");
         PlayerLogOutTimeString = PlayerPrefs.GetString("TimeData");
-
     }
 
     public void SaveData()
@@ -49,12 +45,12 @@ public class PlayerData : MonoBehaviour
     public void Init()
     {
         //game progess
-        PlayerPrefs.SetInt("GameProgress", 0);
+        PlayerPrefs.SetInt("GameProgress", 1);
         //soul amount
         PlayerPrefs.SetInt("SoulAmount", 0);
         PlayerPrefs.SetInt("SoulLimit",1000);
         //power data
-        PlayerPrefs.SetInt("PowerData", 0);
+        PlayerPrefs.SetInt("PowerData", 1000);
         //playertimedata
         PlayerPrefs.SetString("TimeData","");
     }
