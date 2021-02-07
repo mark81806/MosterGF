@@ -17,5 +17,7 @@ public class Upgrade : MonoBehaviour
     public void onClick() 
     {
         power -= perClick;
+        PlayerData.self.PowerData= power;
+        Debug.Log(power);
     }
 }

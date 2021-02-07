@@ -1,23 +1,20 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
-public class test : MonoBehaviour
+namespace DramaEvent
 {
-    public void now()
+    public class CheckEventt : BaseDramaEvent 
     {
-        System.DateTime date;
-        date = System.DateTime.Now; //now time 
-    }
-    public void GetTime()
-    {
-        System.DateTime playertimelogin;
-        playertimelogin = System.DateTime.Now;
-        string playertimeloginstring = playertimelogin.ToString("yyyy-MM-dd HH:mm:ss");
-        System.DateTime test1 = System.DateTime.Parse(playertimeloginstring);
-        Debug.Log(playertimelogin.ToString());
-        Debug.Log(test1.ToString());
+        public string[] events;
 
+        public CheckEventt() : this(new string[] { })
+        { }
+        public CheckEventt(string[] events)
+        {
+            this.events = events;
+        }
 
     }
 }

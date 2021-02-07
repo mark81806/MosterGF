@@ -9,7 +9,7 @@ public class TimeCal : MonoBehaviour
     private System.DateTime logouttime;
     private System.DateTime nowtime;
     private System.TimeSpan sec;
-    public double Soul;
+    public double Power;
     private bool test = true;
     public void Start() 
     {
@@ -19,7 +19,7 @@ public class TimeCal : MonoBehaviour
     public void GetTime()
     {
         //logouttime = System.DateTime.Parse(PlayerData.self.PlayerLogOutTimeString);
-        logouttime = new System.DateTime(2020, 12, 20, 14, 12, 15);
+        logouttime = new System.DateTime(2021, 2, 3, 14, 12, 15);
         nowtime = System.DateTime.Now;
         TimeCalculate();
     }
@@ -32,8 +32,8 @@ public class TimeCal : MonoBehaviour
     {
         if (test)
         {
-            Soul++;
-            TimeText.text = Soul.ToString();
+            Power++;
+            TimeText.text = PlayerData.self.PowerData.ToString();
         }
         else 
         {
@@ -43,6 +43,7 @@ public class TimeCal : MonoBehaviour
     }
     public void SecToSoul() 
     {
-        Soul = sec.TotalSeconds;
+        Power = sec.TotalSeconds;
+        PlayerData.self.PowerData += (int)Power;
     }
 }
