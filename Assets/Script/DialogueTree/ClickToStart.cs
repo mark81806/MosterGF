@@ -1,21 +1,11 @@
-﻿using UnityEngine;
-using System.Collections;
-//using UnityEngine.UI;
-using NodeCanvas.DialogueTrees;
-using ParadoxNotion;
+﻿using System.Collections;
+using System.Collections.Generic;
+using UnityEngine;
 
 public class ClickToStart : MonoBehaviour
 {
-
-    public DialogueTreeController dialogueController;
-    private const string DialoguePath = "Dialogues/";
-
-    public void Start() 
+    public void StartDialogue()
     {
-        dialogueController.graph = (NodeCanvas.Framework.Graph)Resources.Load(DialoguePath+"0");
-    }
-    public void Click()
-    {
-        dialogueController.StartDialogue();
+        StoryManager.self.StartStory("Data/0緣起");
     }
 }
