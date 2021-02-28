@@ -32,6 +32,7 @@ namespace DramaEvent
             }
             Image BG = GameObject.Instantiate ( Resources.Load<Image> ( $"Prefabs/{BGPath}" ) , background );
             Sprite BGSpr = GetSprite ( $"Sprites/{BGPath}/{path}" );
+            Debug.Log($"Sprites/{BGPath}/{path}");
             BG.sprite = BGSpr;
             if ( StorySceneManager.skip )
                 BG.DOFade ( 1 , 0.00001f );

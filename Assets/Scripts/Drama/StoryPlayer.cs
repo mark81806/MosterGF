@@ -37,7 +37,7 @@ namespace DramaEvent
                 string [] line = StoryText [i].Split ( ',' );
                 if ( line [9] == "X" )
                     continue;
-                if (line[4].Contains("{") && line[4].Contains("}"))
+                if (line[2].Contains("{") && line[2].Contains("}"))
                 {
                     check.events = line;
                     yield return check.Play();
@@ -53,10 +53,9 @@ namespace DramaEvent
                     if (line[5] != "")
                         yield return new CreateActorEvent(line, tempPos, tempName).Play();
                     tempName = line[1];
-                    tempPos = line[5];
-                    StoryManager.self.ssm.ActorNameBox.SetActive(line[2] != "旁白");
-
-                    yield return WriterText(line[4].Replace("*", ","), line[1]);
+                    tempPos = line[3];
+                    StoryManager.self.ssm.ActorNameBox.SetActive(line[0] != "旁白");
+                    yield return WriterText(line[2].Replace("*", ","), line[1]);
                 }
             }
             StoryManager.self.EndStory ();

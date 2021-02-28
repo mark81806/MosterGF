@@ -633,10 +633,10 @@ PlayerSettings:
     m_VersionCode: 1
     m_VersionName: 
   apiCompatibilityLevel: 6
-  cloudProjectId: 
+  cloudProjectId: e7bcac85-4513-453d-9389-17151ffddbca
   framebufferDepthMemorylessMode: 0
-  projectName: 
-  organizationId: 
+  projectName: whogoopo
+  organizationId: mark81806
   cloudEnabled: 0
   enableNativePlatformBackendsForNewInputSystem: 0
   disableOldInputManagerSupport: 0

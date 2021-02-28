@@ -43,8 +43,10 @@ namespace DramaEvent
             Actor [] tempActor = StoryManager.self.ssm.Actor.GetComponentsInChildren<Actor> ();
             if ( posID == "" )
             {
+                Debug.Log("a");
                 for ( int i = 0; i < tempActor.Length; i++ )
                 {
+                    Debug.Log("b");
                     bool talkBool = tempActor [i].name == actorName;
                     if ( tempPos != posID || tempName != actorName )
                         tempActor [i].Talk ( talkBool );
@@ -52,10 +54,13 @@ namespace DramaEvent
             }
             else
             {
+                Debug.Log("c");
                 for ( int i = 0; i < tempActor.Length; i++ )
                 {
                     if ( tempActor [i].posX == PID () && tempActor [i].actorName != actorName )
                     {
+                        Debug.Log("d");
+                        Debug.Log(tempActor[i].actorName+ actorName);
                         GameObject.Destroy ( tempActor [i].gameObject );
                         break;
                     }
@@ -63,6 +68,7 @@ namespace DramaEvent
 
                 if ( actorTransform == null )
                 {
+                    Debug.Log("e");
                     actorTransform = GameObject.Instantiate ( Resources.Load<Transform> ( PrefabPath ) , StoryManager.self.ssm.Actor );
                 }
                 actorTransform.name = actorName;
@@ -125,6 +131,7 @@ namespace DramaEvent
 
         IEnumerator UpdateSprite ( Actor actor )
         {
+            Debug.Log("aaaaaaaaa");
             string path = ActorPath +actor.actorName;
             Sprite actorSpr = GetSprite ( path );
             actor.actorImage.sprite = actorSpr;
