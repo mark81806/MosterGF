@@ -12,7 +12,7 @@ namespace DramaEvent
         public float posX;
         public Image actorImage;
         public bool talkBool;
-
+        public string realName;
         private float moveDistance = 30;
 
         RectTransform rect;

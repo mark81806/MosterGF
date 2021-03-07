@@ -5,10 +5,15 @@ using UnityEngine.SceneManagement;
 
 public class SceneChange : MonoBehaviour
 {
+    public static SceneChange self;
+    private void Awake() 
+    {
+        self = this;
+    }
     public void StoryMode() 
     {
         Debug.Log(PlayerData.self.GameProgress);
-        Debug.Log(GameData.self.chapter_unlock_request[PlayerData.self.GameProgress]);
+        Debug.Log(GameData.self.chapter_unlock_request[7]);
         if (PlayerData.self.SoulAmount < GameData.self.chapter_unlock_request[PlayerData.self.GameProgress])
         {
             Debug.Log("nomoney");

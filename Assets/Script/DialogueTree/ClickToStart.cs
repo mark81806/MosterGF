@@ -6,7 +6,8 @@ public class ClickToStart : MonoBehaviour
 {
     public void StartDialogue()
     {
-        StoryManager.self.StartStory("Data/First");
+        //StoryManager.self.StartStory("Data/First");
         //StoryManager.self.StartStory("Data/0緣起");
+        StoryManager.self.StartStory("Data/1慌亂的現實");
     }
 }
