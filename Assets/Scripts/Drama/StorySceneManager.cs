@@ -14,6 +14,7 @@ public class StorySceneManager : MonoBehaviour
     public Transform Background;                //放置背景的空間
     public Transform AudioSpace;                //放置音樂的空間
     public Transform Picture;                   //放置插圖的空間
+    public Transform Buttons;
 
     public static bool auto;
     public static bool skip;

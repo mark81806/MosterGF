@@ -67,6 +67,10 @@ namespace DramaEvent
             {
                 yield return new CreatePictureEvent(int.Parse(events[6]), int.Parse(events[7]), int.Parse(events[8])).Play();
             }
+            else if (eventName == "CreateOption") 
+            {
+                yield return new CreateOptionEvent(events[6]).Play();
+            }
             #endregion
 
             #region 刪除
@@ -92,7 +96,7 @@ namespace DramaEvent
             {
                 yield return new DeleteTextEvent().Play();
             }
-            else if (eventName == "EndDialouge") 
+            else if (eventName == "EndDialouge")
             {
                 yield return new EndDiaEvent().Play();
             }

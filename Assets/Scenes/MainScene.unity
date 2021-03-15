@@ -203,7 +203,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 0}
+      - m_Target: {fileID: 1495802275}
         m_MethodName: onClick
         m_Mode: 1
         m_Arguments:
@@ -373,7 +373,7 @@ Transform:
   m_Children:
   - {fileID: 444281190}
   m_Father: {fileID: 1491200754}
-  m_RootOrder: 2
+  m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &202861024
 GameObject:
@@ -1299,6 +1299,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0a2fbf18ebfe6504c8ca6dc7dc8269c6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  Choice: 0
   GameProgress: 0
   SoulAmount: 0
   PowerData: 0
@@ -1480,7 +1481,7 @@ RectTransform:
   - {fileID: 1823990713}
   - {fileID: 2001160513}
   m_Father: {fileID: 1491200754}
-  m_RootOrder: 3
+  m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
@@ -1649,16 +1650,16 @@ RectTransform:
   m_GameObject: {fileID: 920141430}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 3.68, y: 3.68, z: 36.8}
+  m_LocalScale: {x: 0.1, y: 0.1, z: 1}
   m_Children:
   - {fileID: 1155990756}
   - {fileID: 1127155446}
-  m_Father: {fileID: 1491200754}
-  m_RootOrder: 1
+  m_Father: {fileID: 1712036998}
+  m_RootOrder: 6
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 329.36, y: 356.592}
+  m_AnchoredPosition: {x: 8.950043, y: 9.690033}
   m_SizeDelta: {x: 50, y: 50}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &920141432
@@ -2977,7 +2978,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!4 &1466850653
 Transform:
   m_ObjectHideFlags: 0
@@ -3051,7 +3052,6 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1491200754}
-  - component: {fileID: 1491200755}
   - component: {fileID: 1491200753}
   - component: {fileID: 1491200752}
   - component: {fileID: 1491200751}
@@ -3134,7 +3134,6 @@ RectTransform:
   m_LocalScale: {x: 0, y: 0, z: 0}
   m_Children:
   - {fileID: 1712036998}
-  - {fileID: 920141431}
   - {fileID: 136824284}
   - {fileID: 854362791}
   m_Father: {fileID: 0}
@@ -3145,18 +3144,6 @@ RectTransform:
   m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 0, y: 0}
   m_Pivot: {x: 0, y: 0}
---- !u!114 &1491200755
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1491200750}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 70e98ffc7242ddb4a9ec425cf4823dcd, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!1 &1495802270
 GameObject:
   m_ObjectHideFlags: 0
@@ -3242,7 +3229,7 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls:
       - m_Target: {fileID: 1712037000}
-        m_MethodName: OpenSettingBar
+        m_MethodName: OpenUpgradeBar
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -3399,7 +3386,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &1699393684
 Transform:
   m_ObjectHideFlags: 0
@@ -3452,6 +3439,7 @@ Transform:
   - {fileID: 1150678492}
   - {fileID: 202931645}
   - {fileID: 1495802271}
+  - {fileID: 920141431}
   m_Father: {fileID: 1491200754}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -3479,8 +3467,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 77a01480beb90df4fa749da8d4d4be63, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  SettingBar: {fileID: 0}
-  BookBar: {fileID: 0}
+  SettingBar: {fileID: 1453230469}
+  BookBar: {fileID: 1127155445}
+  UpgradeBar: {fileID: 1699393683}
 --- !u!1 &1773355858
 GameObject:
   m_ObjectHideFlags: 0

@@ -5,6 +5,7 @@ using UnityEngine;
 public class PlayerData : MonoBehaviour
 {
     public static PlayerData self;
+    public int Choice;
     public int GameProgress;
     public int SoulAmount;
     public int PowerData;

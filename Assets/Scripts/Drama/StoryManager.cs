@@ -37,7 +37,8 @@ public class StoryManager : MonoBehaviour
     {
         StorySceneManager.ActorSprite.Clear ();
         StorySceneManager.BackgroundSprite.Clear ();
-        Invoke ( "CloseStory" , 0.5f );                                   
+        Invoke ( "CloseStory" , 0.5f );
+        SceneChange.self.MainScene();
     }
 
     void CloseStory ()                                                    

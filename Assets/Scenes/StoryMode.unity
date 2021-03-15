@@ -164,6 +164,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0a2fbf18ebfe6504c8ca6dc7dc8269c6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  Choice: 0
   GameProgress: 0
   SoulAmount: 0
   PowerData: 0
@@ -343,7 +344,7 @@ PrefabInstance:
     - target: {fileID: 2066525127251334981, guid: 7fa8040b78a67924dab07f96cb6f9ca9,
         type: 3}
       propertyPath: m_RootOrder
-      value: 2
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 2066525127251334981, guid: 7fa8040b78a67924dab07f96cb6f9ca9,
         type: 3}

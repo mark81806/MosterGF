@@ -66,7 +66,6 @@ namespace DramaEvent
 
                 if ( actorTransform == null )
                 {
-                    Debug.Log("e");
                     actorTransform = GameObject.Instantiate ( Resources.Load<Transform> ( PrefabPath ) , StoryManager.self.ssm.Actor );
                 }
                 actorTransform.name = actorName;
@@ -93,16 +92,6 @@ namespace DramaEvent
             }
             yield return null;
         }
-        string [] Employee = new string [5] { "顏無菁" , "夜蓮心" , "笭伊姍" , "端木壹" , "司馬小仙" };
-        string EID ()
-        {
-            for ( int i = 0; i < Employee.Length; i++ )
-            {
-                if ( Employee [i] == actorName )
-                    return i.ToString () + "/";
-            }
-            return "EX/";
-        }
         string [] Clothes = new string[7] { "無" , "剪影", "私服" , "制服" , "泳裝" , "半妖化","妖化" };
         string CID ()
         {
@@ -110,8 +99,8 @@ namespace DramaEvent
             {
                 if (Clothes[i] == clothesName)
                 {
-                    return i.ToString();
-                    /*switch (i) 
+                    //return i.ToString();
+                    switch (i) 
                     {
                         case 0 : return "無" ;
                         case 1: return "剪影";
@@ -121,7 +110,7 @@ namespace DramaEvent
                         case 5: return "D";
                         case 6: return "E";
                         default: return "";
-                    }*/
+                    }
                 }
             }
             return "";
@@ -141,16 +130,14 @@ namespace DramaEvent
             Debug.LogError ( posID + "位置錯誤" );
             return 0;
         }
-
         IEnumerator UpdateSprite ( Actor actor )
         {
             string path;
             if (actor.actorName == "???")
             {
-                path = ActorPath + actor.realName +"-"+ CID();
+                path = ActorPath + actor.realName +"-"+ CID()+"-"+faceID;
             }
-            else { path = ActorPath + actor.actorName + CID(); }
-            Debug.Log(path);
+            else { path = ActorPath + actor.actorName + "-" + CID()+ "-" + faceID; }
             Sprite actorSpr = GetSprite ( path );
             actor.actorImage.sprite = actorSpr;
             yield return null;

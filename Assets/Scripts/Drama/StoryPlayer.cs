@@ -32,7 +32,7 @@ namespace DramaEvent
             }
             string drama = textAsset.text;
             string [] StoryText = drama.Split ( '\n' );
-            for ( int i = 1; i < StoryText.Length; i++ )
+            for ( int i = 1; i < StoryText.Length-1; i++ )
             {
                 string [] line = StoryText [i].Split ( ',' );
                 if ( line [9] == "X" )

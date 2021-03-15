@@ -7,7 +7,9 @@ public class BtnCtl : MonoBehaviour
 {
     public GameObject SettingBar;
     public GameObject BookBar;
+    public GameObject UpgradeBar;
     private bool SettingBarBool = false;
+    private bool UpgradeBarBool = false;
     private bool BookBarBool = false;
     public void OpenSettingBar()    
     {
@@ -19,6 +21,19 @@ public class BtnCtl : MonoBehaviour
         else { 
             SettingBar.SetActive(true);
             SettingBarBool = true;
+        }
+    }
+    public void OpenUpgradeBar()
+    {
+        if (UpgradeBarBool)
+        {
+            UpgradeBar.SetActive(false);
+            UpgradeBarBool = false;
+        }
+        else
+        {
+            UpgradeBar.SetActive(true);
+            UpgradeBarBool = true;
         }
     }
     public void OpenBookBar()
