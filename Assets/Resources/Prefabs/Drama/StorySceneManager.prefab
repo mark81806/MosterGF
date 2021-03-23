@@ -67,7 +67,7 @@ MonoBehaviour:
   Background: {fileID: 5232863943659287163}
   AudioSpace: {fileID: 5232863943837377641}
   Picture: {fileID: 4295258109056426945}
-  Buttons: {fileID: 649137848494915389, guid: be95a16982fe7d8458d79d49f371be5d, type: 3}
+  Buttons: {fileID: 4829756986548949216}
 --- !u!1 &5232863943524627883
 GameObject:
   m_ObjectHideFlags: 0

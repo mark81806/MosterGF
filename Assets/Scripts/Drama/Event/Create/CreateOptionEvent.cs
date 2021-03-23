@@ -15,13 +15,12 @@ namespace DramaEvent
         }
         public override IEnumerator Play()
         {
-            Transform buttons = StoryManager.self.ssm.Buttons.Find("Buttons");
+            Transform buttons = StoryManager.self.ssm.Buttons;
             string[] a = optiontext.Split(new string[] { "。" }, System.StringSplitOptions.RemoveEmptyEntries);
-            Button optionBtn = GameObject.Instantiate(Resources.Load<Button>($"Prefabs/{OptionPath}"));
-            //optionBtn.transform.SetParent(buttons.transform);
+            Button optionBtn = GameObject.Instantiate(Resources.Load<Button>($"Prefabs/{OptionPath}"),buttons);
 
-            optionBtn.onClick.AddListener(delegate() { astro(1); }); //要加delegate?
-            optionBtn.onClick.AddListener(delegate() { astro(2); }); //要加delegate?
+            optionBtn.onClick.AddListener(delegate() { astro(1); }); 
+            optionBtn.onClick.AddListener(delegate() { astro(2); }); 
             
             yield return null;
         }
