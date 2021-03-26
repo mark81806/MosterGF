@@ -22,17 +22,20 @@ public class SceneChange : MonoBehaviour
         {
             PlayerData.self.GameProgress += 1;
             SaveData();
+            Loading.self.BlackOut();
             SceneManager.LoadScene(0);
         }
 
     } 
     public void MainScene() 
     {
+        Loading.self.BlackOut();
         SaveData();
         SceneManager.LoadScene(1);
     }
     public void HuntMode() 
     {
+        //Loading.self.BlackIn();
         SaveData();
         SceneManager.LoadScene(2);
     }
