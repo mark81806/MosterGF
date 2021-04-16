@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using System;
 using UnityEngine.SceneManagement;
 
 public class SceneChange : MonoBehaviour
@@ -20,9 +21,7 @@ public class SceneChange : MonoBehaviour
         }
         else
         {
-            PlayerData.self.GameProgress += 1;
-            SaveData();
-            Loading.self.BlackOut();
+            //Loading.self.BlackOut();
             SceneManager.LoadScene(0);
         }
 

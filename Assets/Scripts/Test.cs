@@ -9,7 +9,7 @@ public class Test : MonoBehaviour
         if (GUILayout.Button("Start"))
         {
             Debug.Log("run");
-            StoryManager.self.StartStory("Data/First");
+            PlayerData.self.SaveData();
         }
     }
 }

@@ -25,15 +25,13 @@ namespace DramaEvent
 
             optionBtn_1.onClick.AddListener(delegate() { astro(1); }); 
             optionBtn_2.onClick.AddListener(delegate() { astro(2); }); 
-            
             yield return null;
         }
-
-        private void BtnSetting(Button btn,string a,int b) 
+        private void BtnSetting(Button btn,string btnText,int btnPos) 
         {
             Text btn_text = btn.GetComponentInChildren<Text>();
-            btn_text.text = a;
-            btn.transform.localPosition = BtnPos[b];
+            btn_text.text = btnText;
+            btn.transform.localPosition = BtnPos[btnPos];
         }
         void astro(int choice)
         {

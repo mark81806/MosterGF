@@ -17,7 +17,7 @@ namespace DramaEvent
         public string tempPos;
         public string tempName;
         private const string PrefabPath = "Prefabs/Drama/Actor";
-        private const string ActorPath = "0122修改/";//system.io.path.combine;
+        private const string ActorPath = "charactor/";//system.io.path.combine;
 
         public CreateActorEvent () : this ( new string [] { } , "" , "" )
         {
@@ -135,9 +135,9 @@ namespace DramaEvent
             string path;
             if (actor.actorName == "???")
             {
-                path = ActorPath + actor.realName +"-"+ CID()+"-"+faceID;
+                path = ActorPath  + actor.realName + "/" + actor.realName + "-" + CID() + "-" + faceID;
             }
-            else { path = ActorPath + actor.actorName + "-" + CID()+ "-" + faceID; }
+            else { path = ActorPath + actor.actorName + "/" + actor.actorName + "-" + CID() + "-" + faceID; }
             Sprite actorSpr = GetSprite ( path );
             actor.actorImage.sprite = actorSpr;
             yield return null;

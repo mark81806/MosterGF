@@ -46,7 +46,7 @@ public class PlayerData : MonoBehaviour
     public void Init()
     {
         //game progess
-        PlayerPrefs.SetInt("GameProgress", 1);
+        PlayerPrefs.SetInt("GameProgress", 0);
         //soul amount
         PlayerPrefs.SetInt("SoulAmount", 0);
         PlayerPrefs.SetInt("SoulLimit",1000);
