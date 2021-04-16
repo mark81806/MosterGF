@@ -51,4 +51,9 @@ public class BtnCtl : MonoBehaviour
     }
     public void MusicCtl() 
     { }
+    public void test222()
+    {
+        string name = gameObject.name;
+        Debug.Log(name);
+    }
 }
