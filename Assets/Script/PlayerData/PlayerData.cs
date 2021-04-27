@@ -54,6 +54,7 @@ public class PlayerData : MonoBehaviour
         PlayerPrefs.SetInt("PowerData", 1000);
         //playertimedata
         PlayerPrefs.SetString("TimeData","");
+        PlayerPrefs.SetString("PlayerSave", "");
     }
     public void GetTime()
     {

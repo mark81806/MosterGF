@@ -1383,11 +1383,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ec0d53853b2e3a74495f7b222246e667, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  a: {fileID: 2009107852}
   Head: {fileID: 1301536199}
   Hair: {fileID: 2093322940}
   Scarf: {fileID: 1619223471}
   Face: {fileID: 1528073764}
-  test: {fileID: 2009107852}
 --- !u!4 &1619223471 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 6304089708921577605, guid: 5b6e5c14c1ef9de48b1dc843515925b0,
@@ -1408,7 +1408,7 @@ Animator:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2009107850}
-  m_Enabled: 1
+  m_Enabled: 0
   m_Avatar: {fileID: 0}
   m_Controller: {fileID: 9100000, guid: 31f85e178e537ed46b2f1d5a40dfa58f, type: 2}
   m_CullingMode: 0

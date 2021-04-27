@@ -8,7 +8,9 @@ public class BtnCtl : MonoBehaviour
     public GameObject SettingBar;
     public GameObject BookBar;
     public GameObject UpgradeBar;
+    public GameObject StoryBar;
     private bool SettingBarBool = false;
+    private bool StoryBarBool = false;
     private bool UpgradeBarBool = false;
     private bool BookBarBool = false;
     public void OpenSettingBar()    
@@ -49,11 +51,26 @@ public class BtnCtl : MonoBehaviour
             BookBarBool = true;
         }
     }
+    public void OpenStoryBar()
+    {
+        if (StoryBarBool)
+        {
+            StoryBar.SetActive(false);
+            StoryBarBool = false;
+        }
+        else
+        {
+            StoryBar.SetActive(true);
+            StoryBarBool = true;
+        }
+    }
     public void MusicCtl() 
     { }
-    public void test222()
+    public void CliclkSceneChange(string i )
     {
-        string name = gameObject.name;
-        Debug.Log(name);
+       // gameObject.name = "222";//start時建立章節樹木
+        Debug.Log(i);
+
+        SceneChange.self.StoryMode(i);
     }
 }

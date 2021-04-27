@@ -5,6 +5,7 @@ using UnityEngine.UI;
 using DG.Tweening;
 public class CharactorMove : MonoBehaviour
 {
+    public Animator a;
     public Transform Head;
     public Transform Hair;
     public Transform Scarf;
@@ -21,6 +22,7 @@ public class CharactorMove : MonoBehaviour
         Move.Append(Head.DOLocalMoveY(movePos2.z, moveTime)).Insert(moveTime, Hair.DOLocalMoveY(movePos2.x, moveTime)).
              Insert(moveTime, Face.DOLocalMoveY(movePos2.y, moveTime));
         Move.SetLoops(200);
+        a.enabled = true;
     }
 
 
