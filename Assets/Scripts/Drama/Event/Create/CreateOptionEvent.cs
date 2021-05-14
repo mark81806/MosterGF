@@ -36,6 +36,14 @@ namespace DramaEvent
         void astro(int choice)
         {
             PlayerData.self.Choice = choice;
+            if (PlayerData.self.GameProgress == 11) 
+            {
+                if (choice == 1) 
+                {
+                    StoryManager.self.EndStory();
+                    StoryManager.self.StartStory("Data / 11.1壞結局");
+                }
+            }
         }
     }
 }

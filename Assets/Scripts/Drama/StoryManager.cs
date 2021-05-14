@@ -41,7 +41,7 @@ public class StoryManager : MonoBehaviour
         SceneChange.self.MainScene();
     }
 
-    void CloseStory ()                                                    
+    public void CloseStory ()                                                    
     {
         GameObject.Destroy ( ssm.gameObject );
         gameObject.SetActive ( false );

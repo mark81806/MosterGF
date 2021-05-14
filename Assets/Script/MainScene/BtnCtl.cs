@@ -68,9 +68,6 @@ public class BtnCtl : MonoBehaviour
     { }
     public void CliclkSceneChange(string i )
     {
-       // gameObject.name = "222";//start時建立章節樹木
-        Debug.Log(i);
-
         SceneChange.self.StoryMode(i);
     }
 }

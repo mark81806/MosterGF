@@ -7,7 +7,7 @@ public class GameData : MonoBehaviour
 {
     [HideInInspector]
     //chapter //chapter unlock request
-    public int[] chapter_unlock_request = new int[] { 10,25,50,80,125,200,320,450};
+    public int[] chapter_unlock_request = new int[] { 0,10,25,50,80,125,200,320,450,490,650};
     [HideInInspector]
     //power   //power level unlock request,powerups,power increase rate
     public int[] power_level__unlock_request = new int[] {0  ,150,170,190,210,230,250,270,290,310,

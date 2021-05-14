@@ -14,11 +14,11 @@ public class SceneChange : MonoBehaviour
     public void StoryMode(string storyNum) 
     {
        
-       /* if (PlayerData.self.SoulAmount < GameData.self.chapter_unlock_request[PlayerData.self.GameProgress])
+        if (PlayerData.self.SoulAmount < GameData.self.chapter_unlock_request[PlayerData.self.GameProgress])
         {
             Debug.Log("nomoney");
         }
-        else*/
+        else
         {
             SceneManager.LoadScene(0);
             BuffData.buffdata = int.Parse(storyNum);
