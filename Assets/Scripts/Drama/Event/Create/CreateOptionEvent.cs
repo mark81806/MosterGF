@@ -44,6 +44,7 @@ namespace DramaEvent
                     StoryManager.self.StartStory("Data / 11.1壞結局");
                 }
             }
+            StoryManager.self.EndStory();
         }
     }
 }

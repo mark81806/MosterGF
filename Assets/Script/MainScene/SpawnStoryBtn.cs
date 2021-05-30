@@ -22,6 +22,7 @@ public class SpawnStoryBtn : MonoBehaviour
             btn.name = i.ToString();
             btn.transform.localPosition = pos+ new Vector3(220*i, 0, 0);
             btn.onClick.AddListener(delegate () { a.CliclkSceneChange(btn.name); } );
+            btn.GetComponentInChildren<Text>().text = i.ToString();
         }
     }
 }

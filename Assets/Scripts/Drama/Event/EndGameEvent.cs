@@ -2,17 +2,20 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class EndGameEvent : MonoBehaviour
+namespace DramaEvent
 {
-    // Start is called before the first frame update
-    void Start()
+    public class EndGameEvent : BaseDramaEvent
     {
-        
-    }
 
-    // Update is called once per frame
-    void Update()
-    {
-        
+        public override IEnumerator Play()
+        {
+            GameReset();
+            yield return null;
+        }
+        public void GameReset() 
+        {
+
+        }
     }
 }
+

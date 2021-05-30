@@ -58,7 +58,7 @@ namespace DramaEvent
                     yield return WriterText(line[2].Replace("*", ","), line[1]);
                 }
             }
-            StoryManager.self.EndStory ();
+            //StoryManager.self.EndStory ();
             yield return new FadeBGMEvent ( 0 , 1 ).Play ();
         }
         IEnumerator WriterText ( string tempText , string name )
