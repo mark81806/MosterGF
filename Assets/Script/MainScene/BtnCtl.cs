@@ -53,21 +53,36 @@ public class BtnCtl : MonoBehaviour
     }
     public void OpenStoryBar()
     {
-        if (StoryBarBool)
+        if (PlayerData.self.Allclearbool)
         {
-            StoryBar.SetActive(false);
-            StoryBarBool = false;
+            if (StoryBarBool)
+            {
+                StoryBar.SetActive(false);
+                StoryBarBool = false;
+            }
+            else
+            {
+                StoryBar.SetActive(true);
+                StoryBarBool = true;
+            }
         }
-        else
+        else 
         {
-            StoryBar.SetActive(true);
-            StoryBarBool = true;
+            SceneChange.self.StoryMode(PlayerData.self.GameProgress.ToString());
         }
     }
     public void MusicCtl() 
     { }
     public void CliclkSceneChange(string i )
     {
-        SceneChange.self.StoryMode(i);
+        if (PlayerData.self.SoulAmount < GameData.self.chapter_unlock_request[PlayerData.self.GameProgress])
+        {
+        }
+        else
+        {
+            SceneChange.self.StoryMode(i);
+            PlayerData.self.Allclearbool = false;
+        }
+        
     }
 }

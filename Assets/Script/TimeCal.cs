@@ -33,7 +33,7 @@ public class TimeCal : MonoBehaviour
         if (test)
         {
             Power++;
-            TimeText.text = PlayerData.self.PowerData.ToString();
+            //TimeText.text = PlayerData.self.PowerData.ToString();
         }
         else 
         {
@@ -44,6 +44,6 @@ public class TimeCal : MonoBehaviour
     public void SecToSoul() 
     {
         Power = sec.TotalSeconds;
-        PlayerData.self.PowerData += (int)Power;
+        //PlayerData.self.PowerData += (int)Power;
     }
 }

@@ -6,25 +6,30 @@ using UnityEngine.SceneManagement;
 
 public class SceneChange : MonoBehaviour
 {
+    public BtnCtl a;
     public static SceneChange self;
     private void Awake() 
     {
         self = this;
     }
-    public void StoryMode(string storyNum) 
+    public void StoryMode(string storyNum)
     {
-       
-        /*(if (PlayerData.self.SoulAmount < GameData.self.chapter_unlock_request[PlayerData.self.GameProgress])
+        if (PlayerData.self.SoulAmount < GameData.self.chapter_unlock_request[PlayerData.self.GameProgress])
         {
             Debug.Log("nomoney");
         }
-        else*/
+        else
         {
+            BuffData.buffdata = -1;
+            SaveData();
             SceneManager.LoadScene(0);
-            BuffData.buffdata = int.Parse(storyNum);
         }
-
-    } 
+    }
+    public void cleardata() 
+    {
+        PlayerData.self.GameProgress = 0;
+        PlayerData.self.SaveData();
+    }
     public void MainScene() 
     {
         Loading.self.BlackOut();

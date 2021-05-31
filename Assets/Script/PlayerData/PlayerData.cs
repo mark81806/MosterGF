@@ -5,19 +5,20 @@ using UnityEngine;
 public class PlayerData : MonoBehaviour
 {
     public static PlayerData self;
+    public bool[] chapters; 
+    public bool Allclearbool;
     public int Choice;
     public int GameProgress;
     public int SoulAmount;
-    public int PowerData;
-    public string PlayerLogOutTimeString;
+    //public string PlayerLogOutTimeString;
     public void Awake()
     {
         self = this;
-        if (PlayerPrefs.GetInt("GameProgress") ==0)
+        if (PlayerPrefs.GetString("PlayerSave") =="")
         {
             Init();
         }
-        ReadData();        
+        ReadData();
     }
     public void OnApplicationQuit()
     {
@@ -25,36 +26,36 @@ public class PlayerData : MonoBehaviour
     }
     private void ReadData()
     {
-        GameProgress = PlayerPrefs.GetInt("GameProgress");
-        SoulAmount = PlayerPrefs.GetInt("SoulAmount");
-        PowerData = PlayerPrefs.GetInt("PowerData");
-        PlayerLogOutTimeString = PlayerPrefs.GetString("TimeData");
-    }
+        PlayerSaveData saveData = new PlayerSaveData();
+        saveData = SaveLoadData.LoadData();
+
+        chapters = saveData.chapters;
+        Allclearbool = saveData.AllClearBool;
+        Choice = saveData.Choice;
+        GameProgress = saveData.GameProgress;
+        SoulAmount = saveData.SoulAmount;
+}
 
     public void SaveData()
     {
-        //game progess
-        PlayerPrefs.SetInt("GameProgress", GameProgress);
-        //food amount
-        PlayerPrefs.SetInt("SoulAmount", SoulAmount);
-        //power data
-        PlayerPrefs.SetInt("PowerData", PowerData);
-        //time data
-        GetTime();
+        PlayerSaveData saveData = new PlayerSaveData();
+        saveData = SaveLoadData.LoadData();
+
+        saveData.AllClearBool= Allclearbool;
+        saveData.Choice= Choice;
+        saveData.GameProgress = GameProgress ;
+        saveData.SoulAmount= SoulAmount;
+
+        SaveLoadData.SaveData(saveData);
     }
 
     public void Init()
     {
-        //game progess
-        PlayerPrefs.SetInt("GameProgress", 0);
-        //soul amount
-        PlayerPrefs.SetInt("SoulAmount", 0);
-        PlayerPrefs.SetInt("SoulLimit",1000);
-        //power data
-        PlayerPrefs.SetInt("PowerData", 1000);
-        //playertimedata
-        PlayerPrefs.SetString("TimeData","");
         PlayerPrefs.SetString("PlayerSave", "");
+    }
+    public void ClearData() 
+    {
+        PlayerPrefs.DeleteAll();
     }
     public void GetTime()
     {

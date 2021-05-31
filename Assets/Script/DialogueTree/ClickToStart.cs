@@ -18,53 +18,48 @@ public class ClickToStart : MonoBehaviour
     }
     public void Start()
     {
-        int gameprogress = BuffData.buffdata;
-        Debug.Log(gameprogress);
+        int gameprogress;
+        if (BuffData.buffdata < 0) { gameprogress = PlayerData.self.GameProgress; }
+        else gameprogress = BuffData.buffdata;
         switch (gameprogress)
         {
             case 0:
                 StoryManager.self.StartStory("Data/0緣起");
-                PlayerData.self.GameProgress += 1;
-                PlayerData.self.SaveData();
-                SaveBool(gameprogress);
+                Things(gameprogress);
                 break;
             case 1:
                 StoryManager.self.StartStory("Data/1慌亂的現實");
-                PlayerData.self.GameProgress += 1;
-                PlayerData.self.SaveData();
-                SaveBool(gameprogress);
+                Things(gameprogress);
                 break;
             case 2:
                 StoryManager.self.StartStory("Data/2青澀的回憶");
-                PlayerData.self.GameProgress += 1;
-                PlayerData.self.SaveData();
-                SaveBool(gameprogress);
+                Things(gameprogress);
                 break;
             case 3:
                 StoryManager.self.StartStory("Data/3合縱與聯盟");
-                PlayerData.self.GameProgress += 1;
-                PlayerData.self.SaveData();
-                SaveBool(gameprogress);
+                Things(gameprogress);
                 break;
             case 4:
                 switch (CheckChoice()) 
                 {
                     case 0:
                         StoryManager.self.StartStory("Data/4紙箱與牽繩(上)");
-                        PlayerData.self.SaveData();
                         SaveBool(gameprogress);
+                        PlayerData.self.SaveData();
                         break;
                     case 1:
                         StoryManager.self.StartStory("Data/4-1晴光分章");
                         PlayerData.self.GameProgress += 1;
                         PlayerData.self.Choice = 0;
                         SaveBool(gameprogress * 10 + CheckChoice());
+                        PlayerData.self.SaveData();
                         break;
                     case 2:
                         StoryManager.self.StartStory("Data/4-2夜雨分章");
                         PlayerData.self.GameProgress += 1;
                         PlayerData.self.Choice = 0;
                         SaveBool(gameprogress * 10 + CheckChoice());
+                        PlayerData.self.SaveData();
                         break;
                 }
                 break;
@@ -73,39 +68,43 @@ public class ClickToStart : MonoBehaviour
                 {
                     case 0:
                         StoryManager.self.StartStory("Data/5紙箱與牽繩(下)");
-                        PlayerData.self.SaveData();
                         SaveBool(gameprogress);
+                        PlayerData.self.SaveData();
                         break;
                     case 1:
                         StoryManager.self.StartStory("Data/5-1晴光分章");
                         PlayerData.self.GameProgress += 1;
                         PlayerData.self.Choice = 0;
                         SaveBool(gameprogress * 10 + CheckChoice());
+                        PlayerData.self.SaveData();
                         break;
                     case 2:
                         StoryManager.self.StartStory("Data/5-2夜雨分章");
                         PlayerData.self.GameProgress += 1;
                         PlayerData.self.Choice = 0;
                         SaveBool(gameprogress * 10 + CheckChoice());
+                        PlayerData.self.SaveData();
                         break;
                 }
                 break;
             case 6:
                 StoryManager.self.StartStory("Data/6學園生活");
-                PlayerData.self.GameProgress += 1;
-                PlayerData.self.SaveData();
-                SaveBool(gameprogress);
+                Things(gameprogress);
                 break;
             case 7:
                 StoryManager.self.StartStory("Data/7善意惡意");
-                PlayerData.self.GameProgress += 1;
-                PlayerData.self.SaveData();
-                SaveBool(gameprogress);
+                Things(gameprogress);
                 break;
             default:
                 Debug.Log("Something in clicktostart went wrong");
                 break;
         }
+    }
+    private void Things(int gameprogress) 
+    {
+        PlayerData.self.GameProgress += 1;
+        SaveBool(gameprogress);
+        PlayerData.self.SaveData();
     }
     private int CheckChoice() 
     {
@@ -113,9 +112,6 @@ public class ClickToStart : MonoBehaviour
     }
     private void SaveBool(int i ) 
     {
-        PlayerSaveData saveData = new PlayerSaveData();
-        saveData = SaveLoadData.LoadData();
-        saveData.chapters[i] = true;
-        SaveLoadData.SaveData(saveData);
+        PlayerData.self.chapters[i] = true;
     }
 }

@@ -39,6 +39,7 @@ public class SaveLoadData
         }
         catch (System.Exception e) 
         {
+            Debug.Log("SaveloadDataErr");
             Debug.LogError(e.Message);
         }
         try

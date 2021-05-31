@@ -10,11 +10,8 @@ public class SpawnStoryBtn : MonoBehaviour
     private const string StoryBtnPath = "Prefabs/0";
     public void Start() 
     {
-        PlayerSaveData sa = new PlayerSaveData();
-        sa = SaveLoadData.LoadData();
-
-            SpawnStoryBtns();
-        }
+        SpawnStoryBtns();
+    }
     private void SpawnStoryBtns()
     {
         for (int i = 0; i <= 10; i++) { 
