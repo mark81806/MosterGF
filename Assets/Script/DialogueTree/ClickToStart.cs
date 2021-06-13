@@ -16,7 +16,7 @@ public class ClickToStart : MonoBehaviour
         //StoryManager.self.StartStory("Data/First");
         //StoryManager.self.StartStory("Data/test");
     }
-    public void Start()
+    public void aStart()
     {
         int gameprogress;
         if (BuffData.buffdata < 0) { gameprogress = PlayerData.self.GameProgress; }

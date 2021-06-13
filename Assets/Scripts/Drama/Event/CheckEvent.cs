@@ -67,9 +67,17 @@ namespace DramaEvent
             {
                 yield return new CreatePictureEvent(int.Parse(events[6]), int.Parse(events[7]), int.Parse(events[8])).Play();
             }
-            else if (eventName == "CreateOption") 
+            else if (eventName == "CreateOption")
             {
                 yield return new CreateOptionEvent(events[6]).Play();
+            }
+            else if (eventName == "LastChap") 
+            {
+                yield return new LastChapEvent().Play();
+            }
+            else if (eventName == "CreateWhiteSplash")
+            {
+                yield return new CreateWhiteSplash().Play();
             }
             #endregion
 

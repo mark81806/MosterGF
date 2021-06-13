@@ -6,7 +6,7 @@ public class PlayerData : MonoBehaviour
 {
     public static PlayerData self;
     public bool[] chapters; 
-    public bool Allclearbool;
+    public bool Allclearbool = true;
     public int Choice;
     public int GameProgress;
     public int SoulAmount;
@@ -30,7 +30,7 @@ public class PlayerData : MonoBehaviour
         saveData = SaveLoadData.LoadData();
 
         chapters = saveData.chapters;
-        Allclearbool = saveData.AllClearBool;
+       // Allclearbool = saveData.AllClearBool;
         Choice = saveData.Choice;
         GameProgress = saveData.GameProgress;
         SoulAmount = saveData.SoulAmount;

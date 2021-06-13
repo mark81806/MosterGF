@@ -6,7 +6,7 @@ using System.Runtime.InteropServices;
 public  class PlayerSaveData
 {
     public  bool[] chapters = new bool[] {true,true, true, true, true, true, true, true, true, true, true, true, true, true, true };
-    public  bool AllClearBool = false;
+    public  bool AllClearBool = true;
     public int Choice;
     public int GameProgress;
     public int SoulAmount;

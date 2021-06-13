@@ -68,7 +68,8 @@ public class BtnCtl : MonoBehaviour
         }
         else 
         {
-            SceneChange.self.StoryMode(PlayerData.self.GameProgress.ToString());
+            SceneChange.self.StoryMode(11.ToString());
+            //SceneChange.self.StoryMode(PlayerData.self.GameProgress.ToString());
         }
     }
     public void MusicCtl() 

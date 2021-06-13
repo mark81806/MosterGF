@@ -24,7 +24,8 @@ namespace DramaEvent
             BtnSetting(optionBtn_2, a[1],1);
 
             optionBtn_1.onClick.AddListener(delegate() { astro(1); }); 
-            optionBtn_2.onClick.AddListener(delegate() { astro(2); }); 
+            optionBtn_2.onClick.AddListener(delegate() { astro(2); });
+            buttons.DetachChildren();
             yield return null;
         }
         private void BtnSetting(Button btn,string btnText,int btnPos) 
@@ -36,14 +37,6 @@ namespace DramaEvent
         void astro(int choice)
         {
             PlayerData.self.Choice = choice;
-            if (PlayerData.self.GameProgress == 11) 
-            {
-                if (choice == 1) 
-                {
-                    StoryManager.self.EndStory();
-                    StoryManager.self.StartStory("Data / 11.1壞結局");
-                }
-            }
             StoryManager.self.EndStory();
         }
     }
