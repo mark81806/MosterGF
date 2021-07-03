@@ -2,22 +2,31 @@
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+using DG.Tweening;
 
 namespace DramaEvent 
 {
-    public class CreateWhiteSplash : BaseDramaEvent 
+    public class CreateWhiteSplash : BaseDramaEvent
     {
-        private const string WhiteSplashPath = "Drama/Background";
-        private const string path = "黑幕";
+        private const string BGPath = "Drama/Background";
         public override IEnumerator Play()
         {
-            Image BG;
-           // GameObject.Instantiate<Image>(BG, new Vector3(1, 0, 0), Quaternion.identity);
-            Sprite sss = Resources.Load<Sprite>($"Sprites/{WhiteSplashPath}/{path}");
-            BG.sprite = sss;
-            BG.color = new Color(255, 255, 255, 255);
-            yield return null; //yield 遇到yield就回傳 傳完再回來。
+            Transform background = StoryManager.self.ssm.Background;
+            Image BG = background.GetComponentInChildren<Image>();
+            string a = BG.sprite.name;
+            BG.sprite = GetSprite($"Sprites/{BGPath}/白幕");
+            yield return new WaitForSeconds(0.1f);
+            BG.sprite = GetSprite($"Sprites/{BGPath}/{a}");
+            if (StorySceneManager.skip)
+                BG.DOFade(1, 0.00001f);
+            else
+                BG.DOFade(1, 0.5f);
+            yield return null;
+        }
+        Sprite GetSprite(string path)
+        {
+            Sprite s = Resources.Load<Sprite>(path);
+            return s;
         }
     }
-
 }
